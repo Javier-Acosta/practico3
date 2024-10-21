@@ -39,7 +39,7 @@ export function agregarSuperHeroes(rutaOriginal, rutaNuevo){
     const nuevoSuperHeroes=JSON.parse(datosNuevos);
 
     const instanciasNuevos=nuevoSuperHeroes.map(
-        hero=> new Superheroe(hero.di, hero.nombreSuperheroe, hero.nombreReal, hero.nombeSociedad, hero.edad, hero.planetaOrigen, hero.debilidad, hero.poder, hero.habilidadEspecial, hero.aliado, hero.enemigo)
+        hero=> new Superheroe(hero.id, hero.nombreSuperheroe, hero.nombreReal, hero.nombeSociedad, hero.edad, hero.planetaOrigen, hero.debilidad, hero.poder, hero.habilidadEspecial, hero.aliado, hero.enemigo)
     );
     const listaActualizada =[...suerHeroesOriginales, ...instanciasNuevos];
     fs.writeFileSync(rutaOriginal, JSON.stringify(listaActualizada,null,2),'utf-8');
